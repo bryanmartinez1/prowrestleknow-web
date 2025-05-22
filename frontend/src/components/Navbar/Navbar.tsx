@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Button from "../Buttons/Button";
+import Dropdown from "../Dropdown/Dropdown";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Navbar() {
   };
 
   const homeButtonStyle: React.CSSProperties = {
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "bold",
     ...allButtonStyle,
   };
@@ -24,6 +25,33 @@ function Navbar() {
     ...allButtonStyle,
   };
 
+  const createOptions: string[] = ["Module", "Data Ring", "Diagram"];
+  const createOptionsFunctions: (() => void)[] = [
+    () => navigate("/module"),
+    () => navigate("/create/dataring"),
+    () => navigate("/create/diagram"),
+  ];
+  const exploreOptions: string[] = [
+    "Wrestler",
+    "Title",
+    "Company",
+    "Event",
+    "Match",
+    "Faction",
+    "Module",
+    "Data Ring",
+  ];
+  const exploreOptionsFunctions: (() => void)[] = [
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+    () => navigate("/explore"),
+  ];
+
   return (
     <div className="navbar">
       <Button
@@ -32,30 +60,22 @@ function Navbar() {
         style={homeButtonStyle}
       />
       <div className="navbar-buttons">
-        <Button
-          text="Explore"
-          onClick={() => navigate("/explore")}
+        <Dropdown
+          label="Create"
+          options={createOptions}
+          optionFunctions={createOptionsFunctions}
           style={navbarButtonStyle}
         />
-        <Button
-          text="Create"
-          onClick={() => navigate("/create")}
-          style={navbarButtonStyle}
-        />
-        <Button
-          text="Module"
-          onClick={() => navigate("/module")}
-          style={navbarButtonStyle}
-        />
-        <Button
-          text="Data Ring"
-          onClick={() => navigate("/dataring")}
+        <Dropdown
+          label="Explore"
+          options={exploreOptions}
+          optionFunctions={exploreOptionsFunctions}
           style={navbarButtonStyle}
         />
       </div>
       <div className="navbar-buttons">
         <Button
-          text="Need Help?"
+          text="Help"
           onClick={() => navigate("/help")}
           style={navbarButtonStyle}
         />
