@@ -21,14 +21,14 @@ function App() {
         <Route path="/create/dataring" element={<Create />} />
         {/* EXPLORE */}
         <Route path="/explore" element={<Explore />} />
-        <Route path="/explore/dataring/:id" element={<SelectedDataRing />} />
-        <Route path="/explore/module/:id" element={<SelectedModule />} />
-        <Route path="/explore/wrestler/:id" element={<SelectedWCMEFT />} />
-        <Route path="/explore/company/:id" element={<SelectedWCMEFT />} />
-        <Route path="/explore/match/:id" element={<SelectedWCMEFT />} />
-        <Route path="/explore/event/:id" element={<SelectedWCMEFT />} />
-        <Route path="/explore/faction/:id" element={<SelectedWCMEFT />} />
-        <Route path="/explore/title/:id" element={<SelectedWCMEFT />} />
+        <Route path="/dataring/:id" element={<SelectedDataRing />} />
+        <Route path="/module/:id" element={<SelectedModule />} />
+        <Route path="/wrestler/:id" element={<SelectedWCMEFT />} />
+        <Route path="/company/:id" element={<SelectedWCMEFT />} />
+        <Route path="/match/:id" element={<SelectedWCMEFT />} />
+        <Route path="/event/:id" element={<SelectedWCMEFT />} />
+        <Route path="/faction/:id" element={<SelectedWCMEFT />} />
+        <Route path="/title/:id" element={<SelectedWCMEFT />} />
         {/* HELP */}
         <Route path="/help" element={<Help />} />
         <Route path="/help/:id" element={<Help />} />

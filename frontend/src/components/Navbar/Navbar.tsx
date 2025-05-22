@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Button from "../Buttons/Button";
@@ -6,6 +6,20 @@ import Dropdown from "../Dropdown/Dropdown";
 
 function Navbar() {
   const navigate = useNavigate();
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const allButtonStyle: React.CSSProperties = {
     fontFamily: "Lexend",
@@ -31,6 +45,7 @@ function Navbar() {
     () => navigate("/create/dataring"),
     () => navigate("/create/diagram"),
   ];
+
   const exploreOptions: string[] = [
     "Wrestler",
     "Title",
@@ -52,10 +67,16 @@ function Navbar() {
     () => navigate("/explore"),
   ];
 
+  const moreOptions: string[] = ["Profile", " Help"];
+  const moreOptionsFunctions: (() => void)[] = [
+    () => navigate("/profile"),
+    () => navigate("/help"),
+  ];
+
   return (
     <div className="navbar">
       <Button
-        text="ProWrestleKnow"
+        text={windowWidth > 590 ? "ProWrestleKnow" : "PWK"}
         onClick={() => navigate("/")}
         style={homeButtonStyle}
       />
@@ -73,18 +94,28 @@ function Navbar() {
           style={navbarButtonStyle}
         />
       </div>
-      <div className="navbar-buttons">
-        <Button
-          text="Help"
-          onClick={() => navigate("/help")}
+      {windowWidth > 590 ? (
+        <div className="navbar-buttons">
+          <Button
+            text="Help"
+            onClick={() => navigate("/help")}
+            style={navbarButtonStyle}
+          />
+          <Button
+            text="Profile"
+            onClick={() => navigate("/profile")}
+            style={navbarButtonStyle}
+          />
+        </div>
+      ) : (
+        <Dropdown
+          label="More"
+          options={moreOptions}
+          optionFunctions={moreOptionsFunctions}
           style={navbarButtonStyle}
+          position="right"
         />
-        <Button
-          text="Profile"
-          onClick={() => navigate("/profile")}
-          style={navbarButtonStyle}
-        />
-      </div>
+      )}
     </div>
   );
 }

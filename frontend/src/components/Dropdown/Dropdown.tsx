@@ -7,6 +7,7 @@ type DropdownProps = {
   options: string[];
   optionFunctions: (() => void)[];
   style?: React.CSSProperties;
+  position?: "left" | "right";
 };
 
 function Dropdown({
@@ -14,6 +15,7 @@ function Dropdown({
   label,
   optionFunctions,
   style = {},
+  position = "left",
 }: DropdownProps) {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -52,7 +54,7 @@ function Dropdown({
         style={style}
       />
       {showDropdown && (
-        <div className="dropdown">
+        <div className="dropdown" style={{ [position]: 0 }}>
           {options.map((option, index) => (
             <Button
               key={index}
