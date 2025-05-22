@@ -3,8 +3,8 @@ import "./help.css";
 
 function Help() {
   return (
-    <div>
-      <HelpCard title="Expore" />
+    <div className="helpPage">
+      <HelpCard title="Explore" />
       <HelpCard title="Module" />
       <HelpCard title="Data Ring" />
       <HelpCard title="Diagram" />
