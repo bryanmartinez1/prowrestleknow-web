@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar/Navbar";
 import SearchDataRing from "./pages/DataRing/Search";
 import SearchWCMEFT from "./pages/WCMEFT/Search";
 import SelectedDataRing from "./pages/DataRing/Selected";
@@ -8,10 +9,13 @@ import SearchModule from "./pages/Module/Search";
 import SelectedModule from "./pages/Module/Selected";
 import SelectedWCMEFT from "./pages/WCMEFT/Selected";
 import Create from "./pages/Diagram/Create";
+import Profile from "./pages/Profile/Profile";
+import Help from "./pages/Help/Help";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* 
@@ -37,11 +41,15 @@ function App() {
         {/* 
           Create 
         */}
-        <Route path="/diagram" element={<Create />} />
+        <Route path="/create" element={<Create />} />
         {/* 
           Profile 
         */}
-        <Route path="/profile" element={<Create />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* 
+          Help 
+        */}
+        <Route path="/help" element={<Help />} />
       </Routes>
     </div>
   );
