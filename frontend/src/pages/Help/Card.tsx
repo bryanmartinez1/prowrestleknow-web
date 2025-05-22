@@ -17,7 +17,7 @@ function HelpCard({ title }: HelpProps) {
     fontSize: "20px",
     borderRadius: "10px",
     boxShadow: "0 0 10px rgba(0, 0, 0, .75)",
-    width: "300px",
+    width: "200px",
     height: "150px",
   };
 
