@@ -1,5 +1,5 @@
-function Create() {
-  return <div>Create</div>;
+function CreateDiagram() {
+  return <div>CreateDiagram</div>;
 }
 
-export default Create;
+export default CreateDiagram;

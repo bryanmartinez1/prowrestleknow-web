@@ -6,9 +6,10 @@ import Explore from "./pages/Explore/Explore";
 import SelectedDataRing from "./pages/DataRing/Selected";
 import SelectedModule from "./pages/Module/Selected";
 import SelectedWCMEFT from "./pages/WCMEFT/Selected";
-import Create from "./pages/Diagram/Create";
 import Profile from "./pages/Profile/Profile";
 import Help from "./pages/Help/Help";
+import CreateDataRing from "./pages/DataRing/Create";
+import CreateDiagram from "./pages/Diagram/Create";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* CREATE */}
-        <Route path="/create/diagram" element={<Create />} />
-        <Route path="/create/dataring" element={<Create />} />
+        <Route path="/create/diagram" element={<CreateDiagram />} />
+        <Route path="/create/dataring" element={<CreateDataRing />} />
         {/* EXPLORE */}
         <Route path="/explore" element={<Explore />} />
         <Route path="/dataring/:id" element={<SelectedDataRing />} />
