@@ -1,0 +1,13 @@
+.ExplorePage {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.exploringTitle {
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Explore from "./pages/Explore/Explore";
 import SelectedDataRing from "./pages/DataRing/Selected";

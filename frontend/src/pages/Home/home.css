@@ -1,0 +1,15 @@
+.HomePage {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.testing {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 10px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

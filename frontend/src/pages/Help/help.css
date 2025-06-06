@@ -8,5 +8,6 @@
   gap: 20px;
   overflow-y: auto;
   align-items: flex-start;
+  justify-content: center;
   overflow-y: auto;
 }

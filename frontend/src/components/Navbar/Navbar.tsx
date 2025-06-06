@@ -8,6 +8,7 @@ function Navbar() {
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
+  //  Updates Window Width
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -15,7 +16,6 @@ function Navbar() {
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -41,7 +41,7 @@ function Navbar() {
 
   const createOptions: string[] = ["Module", "Data Ring", "Diagram"];
   const createOptionsFunctions: (() => void)[] = [
-    () => navigate("/module"),
+    () => navigate("/module/1"),
     () => navigate("/create/dataring"),
     () => navigate("/create/diagram"),
   ];
@@ -57,14 +57,14 @@ function Navbar() {
     "Data Ring",
   ];
   const exploreOptionsFunctions: (() => void)[] = [
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
-    () => navigate("/explore"),
+    () => navigate("/explore?type=wrestler"),
+    () => navigate("/explore?type=title"),
+    () => navigate("/explore?type=company"),
+    () => navigate("/explore?type=event"),
+    () => navigate("/explore?type=match"),
+    () => navigate("/explore?type=faction"),
+    () => navigate("/explore?type=module"),
+    () => navigate("/explore?type=dataring"),
   ];
 
   const moreOptions: string[] = ["Profile", " Help"];
@@ -92,6 +92,7 @@ function Navbar() {
           options={exploreOptions}
           optionFunctions={exploreOptionsFunctions}
           style={navbarButtonStyle}
+          position="right"
         />
       </div>
       {windowWidth > 590 ? (
