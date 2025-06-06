@@ -11,4 +11,6 @@
   border-radius: 0.25rem;
   z-index: 1000;
   min-width: 140px;
+  display: flex;
+  flex-direction: column;
 }
