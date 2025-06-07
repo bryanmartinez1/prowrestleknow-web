@@ -10,4 +10,4 @@ export const exploreTypeOptions: string[] = [
   "Data Ring",
 ];
 export const defaultExploreQuery: string = "";
-export const defaultExploreQueryPreview: string = "Becky Lynch";
+export const defaultExploreQueryPlaceholder: string = "Becky Lynch";
