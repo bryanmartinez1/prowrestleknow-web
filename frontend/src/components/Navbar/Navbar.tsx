@@ -3,6 +3,7 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Button from "../Buttons/Button";
 import Dropdown from "../Dropdown/Dropdown";
+import { exploreTypeOptions } from "../../defaults";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -46,26 +47,9 @@ function Navbar() {
     () => navigate("/create/diagram"),
   ];
 
-  const exploreOptions: string[] = [
-    "Wrestler",
-    "Title",
-    "Company",
-    "Event",
-    "Match",
-    "Faction",
-    "Module",
-    "Data Ring",
-  ];
-  const exploreOptionsFunctions: (() => void)[] = [
-    () => navigate("/explore?type=wrestler"),
-    () => navigate("/explore?type=title"),
-    () => navigate("/explore?type=company"),
-    () => navigate("/explore?type=event"),
-    () => navigate("/explore?type=match"),
-    () => navigate("/explore?type=faction"),
-    () => navigate("/explore?type=module"),
-    () => navigate("/explore?type=dataring"),
-  ];
+  const exploreOptionsFunctions: (() => void)[] = exploreTypeOptions.map(
+    (type: string) => () => navigate(`/explore?type=${type}`)
+  );
 
   const moreOptions: string[] = ["Profile", " Help"];
   const moreOptionsFunctions: (() => void)[] = [
@@ -89,7 +73,7 @@ function Navbar() {
         />
         <Dropdown
           label="Explore"
-          options={exploreOptions}
+          options={exploreTypeOptions}
           optionFunctions={exploreOptionsFunctions}
           style={navbarButtonStyle}
           position="right"

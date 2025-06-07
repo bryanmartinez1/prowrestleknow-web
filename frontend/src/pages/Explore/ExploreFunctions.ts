@@ -1,23 +1,22 @@
-import { defaultExploreQuery, defaultExploreType } from "../../defaults";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import {
+  defaultExploreQuery,
+  defaultExploreType,
+  exploreTypeOptions,
+} from "../../defaults";
 
 export const setExploreType = (type: string | null) => {
   const lowercaseType = type?.toLocaleLowerCase();
-  let exploreTypeOptions = [
-    "wrestler",
-    "title",
-    "company",
-    "event",
-    "match",
-    "faction",
-    "module",
-    "dataring",
-  ];
 
   if (!lowercaseType) {
     return defaultExploreType;
   }
 
-  if (exploreTypeOptions.includes(lowercaseType)) {
+  const lowerCaseTypeOptions: string[] = exploreTypeOptions.map((type) =>
+    type.toLocaleLowerCase()
+  );
+
+  if (lowerCaseTypeOptions.includes(lowercaseType)) {
     return lowercaseType;
   }
 
@@ -34,4 +33,12 @@ export const setExploreQuery = (query: string | null) => {
 
 export const setExploreQuerySearch = (query: string) => {
   return encodeURIComponent(query);
+};
+
+export const typeToPlural = (word: string) => {
+  if (word === "match") {
+    return word + "es";
+  }
+
+  return word + "s";
 };
