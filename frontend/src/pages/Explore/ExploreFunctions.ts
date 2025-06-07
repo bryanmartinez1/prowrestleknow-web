@@ -40,5 +40,9 @@ export const typeToPlural = (word: string) => {
     return word + "es";
   }
 
+  if (word === "company") {
+    return "companies";
+  }
+
   return word + "s";
 };
