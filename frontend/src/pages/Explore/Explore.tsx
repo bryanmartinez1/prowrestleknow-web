@@ -25,11 +25,12 @@ function Explore() {
   }, [location.search]);
 
   const navigateExploreSearch = (search: string) => {
-  let exploreUrl = `/explore?type=${exploreType}`;
-  if (search && search.trim() !== '') {
-    exploreUrl += `&query=${encodeURIComponent(search)}`;
-  }
-  navigate(exploreUrl);
+    let exploreUrl = `/explore?type=${exploreType}`;
+    if (search && search.trim() !== "") {
+      exploreUrl += `&query=${encodeURIComponent(search)}`;
+    }
+
+    navigate(exploreUrl);
   };
 
   return (
@@ -38,8 +39,12 @@ function Explore() {
         Exploring {typeToPlural(exploreType)}
       </div>
       <ExploreSelect selectedType={exploreType} />
-      <Searchbar text = {query}onClick={()=> navigateExploreSearch(query)}
-        updateSearch={setQuery}/>
+      <Searchbar
+        text={query}
+        onClick={() => navigateExploreSearch(query)}
+        updateSearch={setQuery}
+      />
+      <>{query}</>
     </div>
   );
 }

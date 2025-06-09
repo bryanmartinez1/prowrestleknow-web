@@ -6,6 +6,7 @@ function CreateDataRing() {
     <div>
       <div className="dr-buttons">
         <Button text="Import" />
+        <Button text="Template" />
         <Button text="Reset" />
       </div>
       <div>l</div>
