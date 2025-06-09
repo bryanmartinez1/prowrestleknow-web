@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./searchbar.css";
-import SearchIcon from "../../assests/search.svg";
 import { defaultExploreQueryPlaceholder } from "../../defaults";
 import Button from "../Buttons/Button";
 
