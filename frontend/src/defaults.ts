@@ -11,3 +11,5 @@ export const exploreTypeOptions: string[] = [
 ];
 export const defaultExploreQuery: string = "";
 export const defaultExploreQueryPlaceholder: string = "Becky Lynch";
+
+export const diagramOptions: string[] = ['Steal', 'Story Map', 'Board', 'Jotting', 'T-Chart', 'Venn Diagram', 'Paper']

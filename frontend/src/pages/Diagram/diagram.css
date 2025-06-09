@@ -1,0 +1,5 @@
+.DiagramPage {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}

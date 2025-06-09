@@ -1,0 +1,7 @@
+.optionsSlider {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: scroll;
+    background-color: #e5e5e5;
+}

@@ -1,5 +1,9 @@
+import OptionsSlider from "../../components/OptionsSlider/OptionsSlider";
+import { diagramOptions } from "../../defaults";
+
 function CreateDiagram() {
-  return <div>CreateDiagram</div>;
+  
+  return <div><OptionsSlider options={diagramOptions}/></div>;
 }
 
 export default CreateDiagram;
