@@ -1,10 +1,4 @@
-import {
-  ColorRing,
-  Oval,
-  RotatingLines,
-  RotatingSquare,
-  RotatingTriangles,
-} from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 import "./loading.css";
 
 function Loading() {
