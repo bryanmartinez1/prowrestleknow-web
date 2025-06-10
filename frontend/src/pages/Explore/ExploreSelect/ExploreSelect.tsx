@@ -13,7 +13,7 @@ function ExploreSelect({ selectedType }: ExploreSelectType) {
   const [searchParams] = useSearchParams();
 
   const buttonStyle: React.CSSProperties = {
-    fontSize: "14px",
+    fontSize: "12px",
     fontFamily: "Lexend",
     margin: 0,
     background: "none",
