@@ -26,11 +26,6 @@ export const selectedStyle: React.CSSProperties = {
   textDecorationThickness: "3px",
 };
 
-export const searchButtonStyle: React.CSSProperties = {
-  fontSize: "14px",
-  ...allButtonStyle,
-};
-
 export const cardStyle: React.CSSProperties = {
   fontSize: "20px",
   borderRadius: "10px",
