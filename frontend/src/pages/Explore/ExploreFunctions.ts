@@ -3,7 +3,7 @@ import {
   defaultExploreQuery,
   defaultExploreType,
   exploreTypeOptions,
-} from "../../defaults";
+} from "../../defaults/variables";
 
 export const setExploreType = (type: string | null) => {
   const lowercaseType = type?.toLocaleLowerCase();

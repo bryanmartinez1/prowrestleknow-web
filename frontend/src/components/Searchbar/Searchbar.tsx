@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./searchbar.css";
-import { defaultExploreQueryPlaceholder } from "../../defaults";
+import { defaultExploreQueryPlaceholder } from "../../defaults/variables";
 import Button from "../Buttons/Button";
+import { searchButtonStyle } from "../../defaults/css";
 
 type SearchbarType = {
   text: string;
@@ -26,17 +27,9 @@ function Searchbar({ text, updateSearch, onClick }: SearchbarType) {
     }
   };
 
-  const buttonStyle: React.CSSProperties = {
-    fontSize: "14px",
-    fontFamily: "Lexend",
-    margin: 0,
-    background: "none",
-    border: "none",
-  };
-
   return (
     <div className="searchbar">
-      <Button text="Search" onClick={onClick} style={buttonStyle} />
+      <Button text="Search" onClick={onClick} style={searchButtonStyle} />
       <input
         placeholder={defaultExploreQueryPlaceholder}
         className="searchInput"

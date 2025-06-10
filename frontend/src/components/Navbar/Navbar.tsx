@@ -3,7 +3,8 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import Button from "../Buttons/Button";
 import Dropdown from "../Dropdown/Dropdown";
-import { exploreTypeOptions } from "../../defaults";
+import { exploreTypeOptions } from "../../defaults/variables";
+import { homeButtonStyle, navbarButtonStyle } from "../../defaults/css";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -21,24 +22,6 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const allButtonStyle: React.CSSProperties = {
-    fontFamily: "Lexend",
-    margin: 0,
-    background: "none",
-    border: "none",
-  };
-
-  const homeButtonStyle: React.CSSProperties = {
-    fontSize: "20px",
-    fontWeight: "bold",
-    ...allButtonStyle,
-  };
-
-  const navbarButtonStyle: React.CSSProperties = {
-    fontSize: "16px",
-    ...allButtonStyle,
-  };
 
   const createOptions: string[] = ["Module", "Data Ring", "Diagram"];
   const createOptionsFunctions: (() => void)[] = [

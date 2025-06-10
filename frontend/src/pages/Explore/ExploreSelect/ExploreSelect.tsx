@@ -1,8 +1,9 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { exploreTypeOptions } from "../../../defaults";
+import { exploreTypeOptions } from "../../../defaults/variables";
 import Button from "../../../components/Buttons/Button";
 import "./exploreSelect.css";
 import { setExploreType } from "../ExploreFunctions";
+import { buttonStyle, selectedStyle } from "../../../defaults/css";
 
 type ExploreSelectType = {
   selectedType: string;
@@ -11,19 +12,6 @@ type ExploreSelectType = {
 function ExploreSelect({ selectedType }: ExploreSelectType) {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-
-  const buttonStyle: React.CSSProperties = {
-    fontSize: "12px",
-    fontFamily: "Lexend",
-    margin: 0,
-    background: "none",
-    border: "none",
-  };
-
-  const selectedStyle: React.CSSProperties = {
-    textDecoration: "underline",
-    textDecorationThickness: "3px",
-  };
 
   const navigateExploreType = (type: string) => {
     const query = searchParams.get("query");
