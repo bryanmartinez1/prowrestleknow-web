@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./searchbar.css";
 import { defaultExploreQueryPlaceholder } from "../../defaults/variables";
 import Button from "../Buttons/Button";
-import { searchButtonStyle } from "../../defaults/css";
+import { buttonStyle } from "../../defaults/css";
 
 type SearchbarType = {
   text: string;
@@ -29,7 +29,7 @@ function Searchbar({ text, updateSearch, onClick }: SearchbarType) {
 
   return (
     <div className="searchbar">
-      <Button text="Search" onClick={onClick} style={searchButtonStyle} />
+      <Button text="Search" onClick={onClick} style={buttonStyle} />
       <input
         placeholder={defaultExploreQueryPlaceholder}
         className="searchInput"

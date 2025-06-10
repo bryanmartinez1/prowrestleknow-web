@@ -17,7 +17,7 @@ export const navbarButtonStyle: React.CSSProperties = {
 };
 
 export const buttonStyle: React.CSSProperties = {
-  fontSize: "12px",
+  fontSize: "14px",
   ...allButtonStyle,
 };
 
