@@ -42,7 +42,7 @@ function Navbar() {
 
   const createOptions: string[] = ["Module", "Data Ring", "Diagram"];
   const createOptionsFunctions: (() => void)[] = [
-    () => navigate("/module/1"),
+    () => navigate("/create/module"),
     () => navigate("/create/dataring"),
     () => navigate("/create/diagram"),
   ];

@@ -10,6 +10,7 @@ import Profile from "./pages/Profile/Profile";
 import Help from "./pages/Help/Help";
 import CreateDataRing from "./pages/DataRing/Create";
 import CreateDiagram from "./pages/Diagram/Create";
+import CreateModule from "./pages/Module/Create";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         {/* CREATE */}
         <Route path="/create/diagram" element={<CreateDiagram />} />
         <Route path="/create/dataring" element={<CreateDataRing />} />
+        <Route path="/create/module" element={<CreateModule />} />
         {/* EXPLORE */}
         <Route path="/explore" element={<Explore />} />
         <Route path="/dataring/:id" element={<SelectedDataRing />} />

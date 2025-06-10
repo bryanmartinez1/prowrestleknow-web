@@ -1,0 +1,13 @@
+.loadingBackground {
+  flex: 1;
+  background: rgba(49, 49, 49, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation-name: spin;
+}
+
+.loader {
+  animation-name: spin;
+}
